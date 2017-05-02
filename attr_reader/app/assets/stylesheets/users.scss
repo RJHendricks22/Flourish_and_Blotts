@@ -1,3 +1,155 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+  .loginbody{
+	background: url('http://www.publicdomainpictures.net/pictures/200000/velka/book-in-stone-window.jpg');
+	background-size: 100vw 100vh;
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+input{
+	width: 48vw;
+}
+.header{
+	margin: 0;
+	font-family: 'Nova Flat', cursive;
+	padding: 10px;
+	color: #e74c3c;
+	font-size: 4.1em;
+  text-shadow: 5px 5px 10px rgb(124, 2, 0);
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.trade{
+	flex:1;
+	color: white;
+	text-align: center;
+	margin-top: 15vh;
+	text-shadow: 2px 2px 4px #000000;
+	margin-right: 30px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.setup{
+	flex:1;
+	margin-top: 5vh;
+	margin-right: 2vw;
+  position: relative;
+}
+.users{
+	display: flex;
+	flex-direction: column;
+}
+.username{
+	flex:3;
+	padding: 5px;
+}
+.password{
+	flex:3;
+	padding: 5px;
+}
+.logsign{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: -20px;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+}
+.login{
+  background: white;
+  flex: 1;
+  font-weight: 500;
+  border-radius: 10px 0px 0px 0px;
+  padding: 10px;
+  padding-left: 130px;
+  padding-right: 0px;
+}
+
+.signup {
+	background: white;
+	flex: 1;
+	font-weight: 400;
+	border-radius: 0px 10px 0px 0px;
+	padding: 10px;
+	padding-left: 100px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+.pagesignup{
+	border-radius: 10px 0px 0px 0px;
+	order: 1;
+}
+.pagelogin{
+	border-radius: 0px 10px 0px 0px;
+	order: 2;
+}
+
+.pagelogin:hover {
+  color: rgb(255, 185, 0);
+}
+
+.pagesignup:hover {
+  color: rgb(255, 185, 0);
+}
+
+.submit{
+	background: #e74c3c;
+	border: #e74c3c;
+  padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+	font-size: 1.1em;
+  cursor: pointer;
+}
+
+
+.field {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.username,.password,.field{
+	background: white;
+}
+
+.username,.password{
+	width: 50vw;
+}
+@media only screen and (max-width: 430px) {
+	.container{
+	flex-direction: column;
+	}
+	.logo{
+		text-align: center;
+	}
+	.setup,.trade{
+		margin-top: 0vh;
+	}
+	.header{
+		text-align: center;
+	}
+	input,.username,.password{
+		margin-left: 3vw;
+		width: 90vw;
+	}
+}
+
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+
+.signup_text {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.remember_box {
+
+}

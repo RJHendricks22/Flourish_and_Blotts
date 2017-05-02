@@ -1,23 +1,36 @@
+
 <% if user_signed_in? %>
-<a href="/" >Home</a><br>
 
-<h1> Profile Page</h1>
-<h2>Welcome <%= @user.username %>! This is your user information:</h2>
+<%= render 'layouts/header' %>
+<div class="profilebody">
 
-  <strong>Username:</strong> <%= @user.username %><br>
-  <br><strong>Email:</strong> <%= @user.email %><br>
-  <br><strong>First Name:</strong> <%= @user.firstname %><br>
-  <br><strong>Last Name:</strong> <%= @user.lastname %><br>
-  <br><strong>Favorite Genre:</strong> <%= @user.genre %><br>
-  <br><strong>Address:</strong><br>
+<h1>Profile Page</h1>
+<h2>Welcome, <%= @user.username.capitalize %> &nbsp; <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Pencil_icon_vector.svg/320px-Pencil_icon_vector.svg.png" height="24px" width="24px" onclick="edit()"> </h2>
+<br>
+<h2>This is your user information:</h2>
+
+  <p>Username: <%= @user.username %></p>
+  <br>
+  <br>Email: <%= @user.email %><br>
+  <br>First Name: <%= @user.firstname %><br>
+  <br>Last Name:<%= @user.lastname %><br>
+  <br>Favorite Genre: <%= @user.genre %><br>
+  <br> Address: <br>
   <%= @user.building_num %> <%= @user.street %> <%= @apt_num %><br>
   <%= @user.city %>,
   <%= @user.state %><br>
   <%= @user.zip_code %><br>
-  <br><strong>Phone:</strong> <%= @user.phone %><br>
+  <br>Phone: <%= @user.phone %><br>
 
-<br><a href="/users/edit" >Edit your info dude</a><br>
+<br><a href="/users/edit" >Edit your info</a><br>
 
 <br><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
+</div>
 <% end %>
+
+
+<script>
+function edit(){
+  window.location = "/users/edit";
+}
+</script>

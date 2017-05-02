@@ -1,17 +1,31 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+
+
 #  def index
 #    @search = Book.search(params[:q])
 #    @books = @search.result
 #  end
 
-  def index
-  end
 
-  # def create
-  #   email_add = params['user']['email']
-  #   UserMailer.welcome_email(email_add).deliver_now
-  #   redirect_to(:back)
-  # end
+
+
+def show
+
+    render "/devise/registrations/new"
+end
+
+# def created
+
+# end
+
+  def create
+    user = User.create(username: params['user']['username'],
+      email: params['user']['email'],
+      password: params['user']['password']
+    )
+    # byebug
+    redirect_to ("/login")
+
+  end
 
 end

@@ -1,6 +1,20 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+#   before_action :configure_sign_up_params, only: [:create]
+#   before_action :configure_account_update_params, only: [:update]
+
+  def show
+    @users = User.new
+    render "devise/registrations/new"
+
+  end
+
+
+
+  def sign_up_params
+    params.require(:user).permit( :username, :email, :password, :password_confirmation)
+  end
+
+end
 
   # edit user registration
   # and the put action to update the information

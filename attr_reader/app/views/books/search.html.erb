@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+<%= render 'layouts/header' %>
 <h1>signed in</h1><br>
 
 <%= render 'header' %>
@@ -12,7 +13,9 @@
 
 <ul>
 <% @search_result.each do |book| %>
-  <li><%= book.title %>, <%= book.author %>, <%= book.genre %> owned by:  <%= book.user.email %> Request book: <a href="/books/request_trade?id=<%= book.id %>">Click</a></li>
+  <li><%= book.title %>, <%= book.author %>, <%= book.genre %> owned by:  <%= book.user.email %> Request book:
+   <a href="mailto:<%=book.user.email%>">Request book</a>
+    | <a href="/<%= book.user.id %>/book_list" >Check out their profile</a></li>
 <% end %>
 </ul>
 

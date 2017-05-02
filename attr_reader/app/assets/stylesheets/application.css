@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  background: #fafafa;
+}
+.notice{
+  background: red;
+}
+.mybooks{
+    margin-left: 30vw;
+}
+#bookshelf {
+  position: relative;
+  height: 200px;
+}
+
+#bookshelf > div {
+  position: absolute;
+  width: 200px;
+  height: 20px;
+  display: block;
+  background-size: auto;
+  transform: rotate(270deg);
+  text-align: center;
+  top: 100px;
+}
+
+.alert,.notice{
+   display: inline;
+   text-align: center;
+   margin-left:20vw;
+ }
+ body{
+   margin: 0px;
+ }
+ .logo{
+   font-family: 'Nova Flat', cursive;
+ }
+ .navbar{
+   display: flex;
+   background: rgba(231, 76, 60, .5);
+   height: 60px;
+   font-family: 'Nova Flat', cursive;
+ }
+ .navitem{
+   flex: 1;
+   position: relative;
+   top: 2vh;
+   font-size: 1.7em;
+   margin-left:5vw; 
+ }
+ .navitem a{
+   text-decoration: none;
+   color: white;
+ }
+ .dropdown-content {
+     display: none;
+     z-index: 1;
+     color: black;
+     font-size: 0.7em;
+ }
+ .dropdown-content a{
+   color: black;
+   background: #eee;
+ }
+ .dropdown-content{
+  margin-top: 15px;
+  padding-left: 10px;
+   background: #eee;
+ }
+ .dropdown:hover .dropdown-content {
+     display: inline-block;
+ }
+ @media only screen and (max-width: 800px) {
+   .navbar{
+     height: 40px;
+   }
+   .navitem{
+     font-size: 1.5em;
+     top: 1.5vh;
+   }
+ }
+ @media only screen and (max-width: 500px) {
+   .navitem{
+     font-size: 1.2em;
+     margin-left:3vw; 
+   }
+   .mybooks{
+    margin-left: 5vw;
+   }
+}

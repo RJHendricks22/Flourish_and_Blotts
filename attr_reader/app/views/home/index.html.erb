@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
+<body class="loginbody">
+<%= render 'layouts/header' %>
   <h1>welcome to attr_reader</h1>
 
   <a href="/search" >Search database for books already added</a><br>
-    <a href="/<%= @user %>/add_a_book" >Add a book from API!</a><br>
     <a href="/<%= @user %>/book_list" >Detailed Book List</a><br>
     <a href="/<%= @user %>" >My Bookshelf</a><br>
     <a href="/<%= @user %>/profile" >My Profile Page</a>
     <br><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-<% else %>
-
+</body>
 <% end %>

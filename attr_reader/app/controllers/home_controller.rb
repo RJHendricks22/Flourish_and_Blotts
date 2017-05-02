@@ -9,4 +9,8 @@ class HomeController < ApplicationController
     end
   end
 
+  def show
+    @user = User.new
+  end
+
 end

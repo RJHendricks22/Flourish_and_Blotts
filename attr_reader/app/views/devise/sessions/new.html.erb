@@ -1,28 +1,55 @@
-<h2>Log in</h2>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body class="loginbody">
+   <h1 class="header">Attr_Reader</h1>
+   <div class="container">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="trade">
+      <h1>A Modern Way to Trade Books</h1>
+      <p><p>Find the novel or textbook you need and request a trade<br>directly from the owner!<br>Explore our massive selection of books and read on!</p>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="setup">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "users"}) do |f| %>
 
-<%= render "devise/shared/links" %>
-<script>
-const c = console.log;
-c('foobar');
+        <div class="logsign">
+        <h2 class="login pagelogin">Login</h2>
+        <h2 class="signup pagesignup">Sign Up</h2>
+        </div>
+
+        <div class="field">
+           <div class="signup_text"><%= f.label :email %><br /></div>
+           <%= f.email_field :email, class: 'username', autofocus: true %>
+          </div>
+
+          <div class="field">
+           <div class="signup_text"><%= f.label :password %><br /></div>
+             <%= f.password_field :password, class: 'password',  autocomplete: "off" %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <div class="signup_text"><%= f.label :remember_me %></div>
+            </div>
+          <% end %>
+
+        <div class="actions submit">
+           <div class="signup_text"><%= f.submit "Log in", class: 'submit'%></div>
+        </div>
+      <% end %>
+      <strong><div class="signup_text"><%= render "devise/shared/links" %></strong></div>
+    </div>
+
+    <script>
+    $('.submit').click(function(){
+    $('form').submit();
+   })
+   $('.signup').click(function(){
+    window.location = "/users/sign_up";
+   })
+   </script>
+
+</div>
+</body>

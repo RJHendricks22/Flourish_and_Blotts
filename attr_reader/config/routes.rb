@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: "users/sessions" }
-  resources :users
+  devise_for :users
+  resources :books, :except => [:update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 
   devise_scope :user do
-    get "/login", to: "devise/sessions#new"
     get "/users/sign_out", to: "devise/sessions#new"
+    get "/users/sign_up", to: "devise/resgistrations#new"
 
   end
 
@@ -21,9 +22,5 @@ Rails.application.routes.draw do
   get "/:user_id/profile", to: "books#profile"
   get "/:user_id/add_a_book", to: "books#new"
 
-
-  get "/sign_up", to: "devise/registrations#new"
-
-  resources :books, :except => [:update]
 
 end

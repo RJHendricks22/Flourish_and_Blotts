@@ -1,22 +1,18 @@
 <% if user_signed_in? %>
+<%= render "layouts/header" %>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="bookshelf">
+    <% @books.each_with_index do |book, i| %>
+      <div id=<%= "book#{i}" %> style=<%= "background-image:url();left:#{i * 50}px" %>> <%= book[:title] %></div>
+    <% end %>   
+  </div>
 
-  <h1>Show (index) Page for my Books</h1>
-  <ul>
+  <ul class="indexbooklist">
     <% @books.each do |book| %>
-      <li><%= book[:title] %> - <%= book[:author] %><br>
+      <li><%= book[:title] %>  <%= book[:author] %><br>
         ISBN: <%= book[:isbn] %><br>
         Genre: <%= book[:genre] %></li>
         <button>Book Has Been Shipped</button>
     <% end %>
   </ul>
-    <a href="/" >Home</a><br>
-    <a href="/<%= @user %>/add_a_book" >Add a book from API!</a><br>
-    <a href="/search" >Search database for books already added</a><br>
-    <a href="/<%= @user %>/book_list" >Detailed Book List</a><br>
-    <a href="/users/edit" >Edit your info dude</a><br>
-    <a href="/<%= @user %>/profile" >My Profile Page</a>
-
-    <br/>
-    <br><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
   <% end %>
